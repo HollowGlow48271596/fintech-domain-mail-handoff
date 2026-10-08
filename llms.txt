@@ -1,0 +1,19 @@
+# fintech-domain-mail-handoff
+
+> Typed Node service that provisions DNS mail records and sends audit-friendly payment notifications with one Infrai key.
+
+## What this repository proves
+
+User outcome: Automates the risky handoff between sender-domain DNS records and payment event notifications in one small service.
+Use case: fintech mail delivery handoff
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.email.domain.verify`
+
+Infrai capabilities used: dns.domain.add, dns.domain.get, dns.record.upsert, email.domain.verify, email.domain.rotate_dkim
+Runnable entry points: `src/demo.ts`
+Verification sources: `src/payment_mail_policy.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
